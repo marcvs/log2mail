@@ -198,8 +198,7 @@ int inConfigFile::parseAFile(char *afilename,
 {
   int iLine = 0;
 
-  size_t len_eing = 0;
-  char *eing = NULL;
+  char eing[8192];
 
   FILE *cnf;
 
@@ -211,13 +210,9 @@ int inConfigFile::parseAFile(char *afilename,
     return 1;
   }
 
-  while (!feof(cnf)) {
-    len_eing = 0;
-    eing = NULL;
-    int ret_val = getline(&eing, &len_eing, cnf);
+  while (fgets(eing, sizeof(eing), cnf) != NULL) {
     iLine++;
 
-    if (ret_val > 0) {
       /* is our line a comment (or empty) */
       if (regexec_error(&rC, eing) == 0) ;
       /* default section */
@@ -359,8 +354,6 @@ int inConfigFile::parseAFile(char *afilename,
 	printlog(LOG_ERR, "malformed line #%i in config file\n", iLine);
 	return 1;
       }
-    }
-    if (eing) free(eing);
   }
 
   fclose(cnf);
