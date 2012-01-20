@@ -18,6 +18,7 @@
 #include <stdio.h>
 #include <syslog.h>
 #include <unistd.h>
+#include <strings.h>
 
 using namespace std;
 

@@ -18,6 +18,7 @@
 #include <stdlib.h>
 #include <regex.h>
 #include <syslog.h>
+#include <strings.h>
 
 #include <sys/stat.h>
 #include <sys/types.h>
