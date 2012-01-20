@@ -101,7 +101,7 @@ int main (int argc, char *argv[]) {
 	break;
 
       case 'V': 
-	fprintf(stdout, "%s. Version 0.2.8 November 2002.\n", argv[0]);
+	fprintf(stdout, "%s. Version " PACKAGE_VERSION "\n", argv[0]);
 	exit(0);
 
       case 'h':
