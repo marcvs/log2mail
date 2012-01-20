@@ -32,6 +32,7 @@ void usage (char *name) {
 }
 
 int bUseSyslog = 0;
+int bUseStderrlog = 1;
 
 int printlog(int priority, char *format, ...) {
   va_list ap;
@@ -62,7 +63,8 @@ int printlog(int priority, char *format, ...) {
     }                                                              
     syslog(priority, "%s", p);
     free(p);
-  } else {
+  }
+  if (bUseStderrlog) {
     va_start (ap, format);
     vfprintf(stderr, format, ap);
     va_end (ap);
@@ -129,7 +131,7 @@ int main (int argc, char *argv[]) {
   
   if (!bNoFork) {
     bUseSyslog = 1;
-    openlog("log2mail", LOG_PID|LOG_PERROR, LOG_DAEMON);
+    openlog("log2mail", LOG_PID, LOG_DAEMON);
   }
   
   init_regex();
@@ -162,9 +164,8 @@ int main (int argc, char *argv[]) {
   }
   /* if forking: only the child gets here */
 
-  if (bUseSyslog) {
-    closelog();
-    openlog("log2mail", LOG_PID, LOG_DAEMON);
+  if (!bNoFork) {
+    bUseStderrlog = 0;
   }
 
   /* install signal handler */
