@@ -1,0 +1,117 @@
+.\" Process this file with groff -man -Tascii log2mail.8
+.\" (c) Copyright 1999 innominate.de (Michael Krax)
+.\" krax@innominate.de
+.\"
+.\" this manual page may be incorrect or out-of-date.  The author(s) assume no
+.\" responsibility for errors or omissions, or for damages resulting from
+.\" the use of the information contained herein.  The author(s) may not
+.\" have taken the same level of care in the production of this manual,
+.\" which is licensed free of charge, as they might when working
+.\" professionally.
+.\"
+.TH log2mail.conf 5 "30 January 2001" "innominate.com"
+.UC 4
+.SH NAME
+log2mail.conf describes the configuration file options for log2mail(8).
+.SH SYNTAX
+Every line consists of a key word, most of them followed by a '=' and
+a value. You may have as many spaces (no tabs) before or at the end
+of the lines. Values ending or starting with a space must be enclosed
+in "". Comment lines start with a hash (#).
+
+log2mail either reads all files in a given directory or one specified
+configuration file. You may include any number of files using:
+.RS
+.B
+include = filename
+.RE
+You can specify default values in a
+.RS
+.B
+default
+.RE
+section. There you may specify values for fromaddr, sendtime,
+resendtime, maxlines, template and sendmail (description see below).
+
+For every logfile you specify a file section:
+.RS
+.B
+file = filename
+.RE
+
+For every pattern you specify a pattern option (belonging to a log file):
+.RS
+.B
+pattern = yourpattern
+.RE
+You may specify one or more pattern for every log file.
+
+For every pattern you may specify one or more mail address:
+.RS
+.B
+mailto = address
+.RE
+Replace filename, yourpattern, address with the filename of
+the log file, your pattern you want to match and your mail address.
+
+.RE
+.IP "fromaddr = FROM"
+log2mail gives 
+.I FROM
+as sender address to sendmail.
+.IP "sendtime = TIME"
+log2mail waits
+.I TIME
+seconds before sending a message after a pattern has been matched for the
+first time.
+.IP "resendtime = TIME"
+log2mail waits 
+.I TIME
+seconds before sending a message a second time.
+.IP "maxlines = NUMBER"
+Each message should not contain more than
+.I NUMBER
+lines of logfile entries.  If maxlines is set to 0, a message will contain all
+the lines that matched since the last message was sent.
+.IP "template = FILENAME"
+Tells log2mail that it will find the template for the message in
+.I FILENAME
+See below for escape sequences.
+.IP "sendmail = EXECUTABLE ARGUMENTS"
+Tells log2mail to call 
+.I EXECTUABLE ARGUMENTS
+instead of sendmail -oi -t.
+.SH log2mail message templates
+.PP
+The following escape sequences will be replaced:
+.IP %f
+Sender address as specified with
+.I FromAdr
+.IP %n
+how often the pattern has been matched since the last message has been sent
+.IP %l
+the last lines (
+.I MaxMsgLines
+)
+.IP %t
+At this place the recipient address will be inserted.
+.IP %m
+the pattern matched
+.IP %F
+the name of the logfile
+.IP %h
+the hostname of this machine
+.SH FILES
+.I /etc/log2mail.conf
+
+one or more message template files
+.SH AUTHOR
+Michael Krax <michael.krax@innominate.com>
+.LP
+.SH "SEE ALSO"
+.B regex
+(7),
+.B log2mail
+(8)
+
+

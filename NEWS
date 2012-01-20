@@ -1,0 +1,18 @@
+ * News from version 0.2.7 to version 0.2.8
+
+ - New maxlines mode: if maxlines is set to 0, log2mail will send all the lines
+   matching the pattern that appeared since the last mail was sent.
+   In this way, all the matched log entries are sent by mail, but just once.
+ 
+ * News from version 0.2.6 to version 0.2.7
+ 
+ - Added ChangeLog
+ - Fixed a bug causing problems with EOF detection in config files in some
+   architectures (arm, powerpc and s390)
+
+ * News from version 0.2.5.1 to version 0.2.6
+
+ - Added NEWS file
+ - Read logfiles 512 bytes at a time instead of 1
+ - Log lines are not truncated and can be of any possible length
+ - Split upstream and debian version numbers

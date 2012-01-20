@@ -1,0 +1,12 @@
+From: %f
+To: %t
+Subject: matched your pattern %m
+
+Hello!
+
+We (%h) have matched your pattern in %F %n times:
+
+%l
+
+Yours,
+logwatch 

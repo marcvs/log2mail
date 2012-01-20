@@ -1,0 +1,43 @@
+This file describes the configuration file syntax of log2mail.
+
+log2mail takes his configuration either from one file (specify
+a file as configuration "file") or from all (not hidden) files
+in a directory (specify a directory as configuration "file").
+
+Each configuration file may contain the following expressions:
+
+include = FILENAME
+
+defaults 
+
+file = FILENAME
+
+
+include includes the content of FILENAME at the exact location
+in the configuration file.
+
+defaults and file start sections.
+
+
+A defaults-section must be the first section in a configuration 
+file.
+
+For each file (or globally for all files in the defaults-section)
+you may specify patterns:
+
+defaults|file = FILENAME
+  pattern = PATTERN
+    mailto = MAIL
+      fromaddr = FROM
+      sendtime = TIME
+      resendtime = TIME
+      maxlines = NUMBER
+      template = FILENAME
+      sendmail = EXECUTABLE ARGUMENTS
+
+Each pattern may have one or more mailto addresses. 
+For default value specification pattern and/or mailto may be omitted.
+You may not specify "mailto" without "pattern".
+
+$Id: Configuration,v 1.2 2001/01/26 17:22:58 krax Exp $
+

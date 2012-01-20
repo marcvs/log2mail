@@ -1,0 +1,49 @@
+This is the README file to log2mail
+
+log2mail is a simple daemon who watches (log-)files for append lines 
+and mails to a given mail address if there is a pattern matched.
+
+
+To COMPILE the program do the following:
+
+$ ./configure
+$ make
+$ make install
+
+For further information have a look at the man-page log2mail.8 distributed hereby.
+
+
+
+
+LICENSE:
+
+log2mail is distributed under the terms of the GPL.
+A copy of the GPL is distributed with the source code.
+
+Please notify me of any bugs you found.
+
+
+
+
+
+The perlscripts test.pl and test2.pl are for use with the sample configuration file.
+They send a pattern to the sample logfiles.
+
+
+
+Contact information:
+
+mk-log2mail@krax.net
+
+
+The initial development of this programme was sponsored by the Berlin,
+Germany based innominate AG.
+
+
+Thanks go to:
+
+Gerrit Pape <pape@smarden.org>, who not only builds the debian
+packages but gives much valuable advice.
+
+Enrico Zini <zinie@cs.unibo.it>, who discovered a grave bug and
+provided a fix.

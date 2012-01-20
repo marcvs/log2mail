@@ -1,0 +1,75 @@
+.\" Process this file with groff -man -Tascii log2mail.8
+.\" (c) Copyright 1999 innominate.de (Michael Krax)
+.\" krax@innominate.de
+.\"
+.\" this manual page may be incorrect or out-of-date.  The author(s) assume no
+.\" responsibility for errors or omissions, or for damages resulting from
+.\" the use of the information contained herein.  The author(s) may not
+.\" have taken the same level of care in the production of this manual,
+.\" which is licensed free of charge, as they might when working
+.\" professionally.
+.\"
+.TH log2mail 8 "30 January 2001" "innominate.com"
+.UC 4
+.SH NAME
+log2mail runs as a daemon matching patterns in files and sending mail if a match occurs
+.SH SYNOPSIS
+.B log2mail 
+.BR [\- "N" ]
+.BR [\- "R" ]
+.BR [\- "l" ]
+.RB [ "\-f"
+.IR config-file ]
+.PP
+.B log2mail 
+.BR \- "V"
+.PP
+.B log2mail 
+.BR \- "h"
+.SH DESCRIPTION
+.I log2mail
+is configured by a config file (see below). It matches each line added to a
+given file against patterns for this file and sends mail to a named recepient, 
+if the pattern matches. Because of limitations to the select()-system call,
+log2mail scans files every second. Log2mail waits a number of seconds before
+it'll send a message, and if this specific pattern is matched again, it waits
+another number of seconds, specified like the first one in the config file.
+
+log2mail runs as a daemon (if started without the -N option, see below). 
+In daemon mode, log2mail logs using the syslog DAEMON facility 
+(/var/log/daemon.log in Debian).
+.LP
+.SH OPTIONS
+.IP -h
+display a short help and exit
+.IP -V
+display version information and exit
+.IP -N
+do not fork into background, log to STDERR
+.IP -l
+write a log entry for every mail message sent
+.IP -R
+read directory recursive in config dir
+.IP "-f config-file"
+use
+.I config-file
+instead of the default /etc/log2mail.conf. You may specify 
+a directory instead of a file: All files in the directory
+will be read (without reasonable exceptions, see source).
+See log2mail.conf(5) for a description of the format.
+.SH FILES
+.I /etc/log2mail.conf
+
+a message template file
+.SH HINTS
+To increase the amount of information printed by log2mail, compile with the DEBUG option
+(see source code).
+.SH AUTHOR
+Michael Krax <mk-log2mail@krax.net>
+.LP
+.SH "SEE ALSO"
+.B regex 
+(7),
+.B log2mail.conf
+(5)
+

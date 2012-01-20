@@ -1,0 +1,14 @@
+ - If a matched line is followed by a line like "last message repeated xxx
+   time", include it in the mail
+ - Substitute the select with no timeout followed by a sleep to a select with
+   timeout, if possible.
+ - Add an #ifdef to use dnotify (linux/Documentation/dnotify.txt) to watch the
+   log files when available  (no, because dnotify notifies at directory level,
+   and it would wake up quite often if the watched file is on a busy directory
+   like, for example, /var/log)
+ 
+ * Done in 0.2.8
+
+ + Make it possible (activated by a specific option) to send mails that contain
+   exactly all and only the log lines that appeared since the last mail was
+   sent

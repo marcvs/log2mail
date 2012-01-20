@@ -1,0 +1,36 @@
+2004-10-13  Qingning Huo <qhuo@mayhq.co.uk>
+	* includes.h (inLogfile::checkRotate())
+	fixed a race condition: new data can arrive between read() and stat().
+	* config.cc (inTemplate::readContents())
+	fixed a buffer overrun by one problem.
+	* increased version number to 0.3.0
+2004-09-30  Qingning Huo <qhuo@mayhq.co.uk>
+	* use autoconf & automake to manage the pacakge.
+	* use C++ standard headers: eg. <list>, <map>.
+	* fixed compiler warnings in the source code, eg:
+		no return statement in non-void functions;
+		comparasion of signed and unsigned values.
+	* moved conf/log2mail.conf and doc/Configuration to parent directory,
+	removed conf/ and doc/ subdirectory.
+	* removed compressed manpages.
+	* added the AUTHORS file.
+	* increased version number to 0.2.9
+2004-08-01  Enrico Zini <enrico@debian.org>
+	* includes.h
+	declare pure virtual functions with "= 0;" instead of "= NULL;".
+	* Makefile
+	do not compress manpages anymore, as their installation is delegated
+	to Debian tools and they take care of it anyway
+	make use of CXXFLAGS
+2002-11-25  Enrico Zini <zinie@cs.unibo.it>
+	* main.cc
+	updated version informations
+	* log2mail.conf.5
+	documented the new maxlines == 0 behaviour
+	* data.cc
+	addZeile(): do not delete lines in zeilen if maxlines == 0
+	build(): empty zeilen after reading its contents if maxlines == 0
+2002-10-08  Enrico Zini <zinie@cs.unibo.it>
+	* config.cc
+	Made c an int in inTemplate::readContents(), so that it won't risk to
+	fail the test with EOF.
