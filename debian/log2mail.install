@@ -1,0 +1,4 @@
+etc/log2mail/*
+usr/sbin/log2mail
+usr/share/man/man5/log2mail.conf.5
+usr/share/man/man8/log2mail.8
