@@ -1,0 +1,19 @@
+This package was debianized by Gerrit Pape <pape@smarden.org> on
+Tue,  4 Apr 2000 14:38:18 +0200.
+
+It was downloaded from
+ftp://ftp.innominate.org/pub/krax/debian/log2mail_0.2.1.orig.tar.gz
+
+The latest version is available from http://mayhq.co.uk/log2mail.html
+
+Upstream Authors: Michael Krax <krax@innominate.de>, Enrico Zini <enrico@debian.org>,
+Qingning Huo <qhuo@mayhq.co.uk>
+
+Copyright (c) 2000 innominate AG
+
+LICENSE:
+
+This software is distributed under the GNU General Public License,
+which can be found at /usr/share/common-licenses/GPL-2.
+
+Please notify me of any bugs you found.

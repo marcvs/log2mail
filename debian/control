@@ -1,0 +1,15 @@
+Source: log2mail
+Section: admin
+Priority: optional
+Maintainer: Qingning Huo <qhuo@mayhq.co.uk>
+Standards-Version: 3.6.2
+Build-Depends: debhelper (>= 4.1), cdbs, dh-buildinfo
+
+Package: log2mail
+Architecture: any
+Depends: exim4 | mail-transport-agent, adduser, ${shlibs:Depends}
+Description: Daemon watching logfiles and mailing lines matching patterns
+ log2mail is a small daemon watching logfiles and sending mail
+ to a specified address if a regular expression is matched.
+ log2mail uses a configuration file. It has some options to reduce
+ the amount of messages send to the user.

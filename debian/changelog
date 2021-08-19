@@ -1,0 +1,170 @@
+log2mail (0.3.0-2.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Added LSB formatted dependency info in init.d script (closes: #469808)
+
+ -- Peter Eisentraut <petere@debian.org>  Wed, 02 Apr 2008 12:30:01 +0200
+
+log2mail (0.3.0-2) unstable; urgency=low
+
+  * C++ 4.0 transition.
+  * Upgrade to Standards-Version: 3.6.2.
+  * Removed daemontools support.
+  * Removed warning before adduser, adduser moved to postinst.
+
+ -- Qingning Huo <qhuo@mayhq.co.uk>  Thu, 28 Jul 2005 22:14:57 +0100
+
+log2mail (0.3.0-1) unstable; urgency=low
+
+  * New upstream release. 
+
+ -- Qingning Huo <qhuo@mayhq.co.uk>  Wed, 13 Oct 2004 21:53:27 +0100
+
+log2mail (0.2.9-1) unstable; urgency=low
+
+  * New upstream release.
+  * New maintiainer Qingning Huo <qhuo@mayhq.co.uk>. Closes: #262706
+
+ -- Qingning Huo <qhuo@mayhq.co.uk>  Mon,  4 Oct 2004 21:24:07 +0100
+
+log2mail (0.2.8-3) unstable; urgency=low
+
+  * Included the binary in the package.  Closes: #264671
+    Thanks to Florian Ernst for the patch
+  * Fixed DSA-513 security issue.  Closes: #264687
+    Thanks to Florian Ernst for the patch
+
+ -- Enrico Zini <enrico@debian.org>  Mon, 30 Aug 2004 16:09:37 +0200
+
+log2mail (0.2.8-2) unstable; urgency=low
+
+  * Acknowledge NMU.  Closes: #206450.
+  * Fixed source to compile with g++ 3.4.  Closes: #260493.
+    Thanks to Andreas Jochens for the patch
+  * Ported to cdbs
+  * Climbed upgrade-checklist and brought the package to bleeding-edge
+    Standards-Version
+
+ -- Enrico Zini <enrico@debian.org>  Sun,  1 Aug 2004 17:57:55 +0200
+
+log2mail (0.2.8-1.1) unstable; urgency=low
+
+  * Non-maintainer upload
+  * NMU coordinated with Enrico (reason of 0 delay)
+    and this is only a rebuild for the gcc transition.
+    Absolutely nothing has been changed in the package
+    from the previous upload.
+
+ -- Fabio M. Di Nitto <fabbione@fabbione.net>  Wed, 20 Aug 2003 21:48:47 +0200
+
+log2mail (0.2.8-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Enrico Zini <enrico@debian.org>  Mon, 25 Nov 2002 11:00:40 +0100
+
+log2mail (0.2.7-1) unstable; urgency=low
+
+  * New upstream version.  Closes: #163832.
+
+ -- Enrico Zini <enrico@debian.org>  Thu, 10 Oct 2002 03:38:29 +0200
+
+log2mail (0.2.6-1) unstable; urgency=low
+
+  * New upstream version
+  * First upload by me
+  * Split debian version from upstream version number
+
+ -- Enrico Zini <enrico@debian.org>  Wed,  2 Oct 2002 17:50:45 +0200
+
+log2mail (0.2.5.1) unstable; urgency=high
+
+  * security: data.cc, select.cc: fix buffer overflow (thx Enrico Zini);
+    see bug #161207 for details.
+  * new Maintainer: Enrico Zini; Uploader: me.
+  * new author's mail address.
+
+ -- Gerrit Pape <pape@smarden.org>  Mon, 30 Sep 2002 10:29:10 +0200
+
+log2mail (0.2.5) unstable; urgency=low
+
+  * changed maintainer email address to <pape@smarden.org>.
+
+ -- Gerrit Pape <pape@smarden.org>  Mon, 24 Sep 2001 16:03:55 +0200
+
+log2mail (0.2.4) unstable; urgency=low
+
+  * builds with gcc-3.0 (tested on i386, closes: #104729).
+
+ -- Gerrit Pape <pape@innominate.com>  Mon, 16 Jul 2001 13:13:59 +0200
+
+log2mail (0.2.3) unstable; urgency=low
+
+  * rotating of logfile supported (new file check, size check,
+    modification time check)
+  * all code changes by <krax@innominate.com>
+
+ -- Gerrit Pape <pape@innominate.com>  Mon, 25 Jun 2001 13:22:03 +0200
+
+log2mail (0.2.2.2) unstable; urgency=low
+
+  * documented %h option
+  * SIGHUP and SIGTERM support (experimental) 
+  * all code changes by <krax@innominate.com>
+
+ -- Gerrit Pape <pape@innominate.com>  Mon, 26 Mar 2001 12:35:14 +0200
+
+log2mail (0.2.2.1) unstable; urgency=low  
+
+  * fixed path to email template in config/default.
+
+ -- Gerrit Pape <pape@innominate.com>  Thu,  8 Feb 2001 16:28:55 +0100
+
+log2mail (0.2.2) unstable; urgency=low
+
+  * debian package cleanup.
+  * removed debian-revision, upstream includes debian directory.
+
+ -- Gerrit Pape <pape@innominate.com>  Thu,  8 Feb 2001 16:28:55 +0100
+
+log2mail (0.2.1-1) unstable; urgency=low
+
+  * new configuration file syntax 
+
+ -- Michael Krax <michael.krax@innominate.de>  Fri, 26 Jan 2001 18:21:24 +0100
+
+log2mail (0.1.2-1) unstable; urgency=low
+
+  * fixed memory leak
+
+ -- Michael Krax <michael.krax@innominate.de>  Wed, 24 Jan 2001 11:52:46 +0100
+
+log2mail (0.1.1-1) unstable; urgency=low
+
+  * switched back to start-stop-daemon (from supervise)
+  * lingo-independent version
+
+ -- Michael Krax <michael.krax@innominate.de>  Wed, 24 Jan 2001 11:49:08 +0100
+
+log2mail (0.1.1-lingo-1) unstable; urgency=low
+  
+  * new log2mail version 0.91 used
+  
+ -- Michael Krax <michael.krax@innominate.de>  Thu,  4 Jan 2001 15:24:32 +0100
+
+log2mail (0.1.0-lingo-2) unstable; urgency=low
+
+  * switched to supervise
+  * config/logs in /etc/log2mail
+
+ -- Gerrit Pape <pape@innominate.de>  Wed, 29 Nov 2000 12:39:33 +0100
+
+log2mail (0.1.0-lingo-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Gerrit Pape <pape@innominate.de>  Tue,  4 Apr 2000 14:38:18 +0200
+
+Local variables:
+mode: debian-changelog
+End:

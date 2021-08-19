@@ -1,0 +1,7 @@
+log2mail for Debian
+----------------------
+
+log2mail's configuration is in /etc/log2mail . The daemon is started via
+init-script by default, logging through syslog, using the directory
+/etc/log2mail/config for configuration files,  See log2mail.conf(5) and
+/usr/share/doc/log2mail/Configuration for details on how this works.
