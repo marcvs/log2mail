@@ -1,0 +1,15 @@
+*.o
+*.cache
+*.swp
+debian/autoreconf*
+debian/files
+debian/log2mail/*
+debian/stamp-*
+config.log
+config.status
+Makefile
+debian/.debhelper
+debian/debhelper-build-stamp
+log2mail
+debian/log2mail.substvars
+.deps
