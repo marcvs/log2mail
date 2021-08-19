@@ -1,19 +1,28 @@
 #!/usr/bin/make -f
 
-include /usr/share/cdbs/1/rules/debhelper.mk
-include /usr/share/cdbs/1/class/autotools.mk
+DESTDIR=`pwd`/debian/log2mail
 
-#DEB_MAKE_ENVVARS += DEBUG=no
-#DEB_MAKE_INSTALL_TARGET = install DESTDIR=$(CURDIR)/debian/log2mail
+##include /usr/share/cdbs/1/rules/debhelper.mk
+#include /usr/share/cdbs/1/class/autotools.mk
+#
+##DEB_MAKE_ENVVARS += DEBUG=no
+##DEB_MAKE_INSTALL_TARGET = install DESTDIR=$(CURDIR)/debian/tmp/
+#DEB_MAKE_INSTALL_TARGET = install DESTDIR=$(DESTDIR)
+#
+### Store build information
+##common-binary-post-install-arch common-binary-post-install-indep::
+##    dh_buildinfo
 
-# Store build information
-common-binary-post-install-arch common-binary-post-install-indep::
-	dh_buildinfo
+%: 
+	dh $@ 
 
-common-install-impl::
-	# configfile
+#override_dh_auto_install:
+#    make install DESTDIR=$(DESTDIR)
+
+override_dh_install:
+	#dh_install --sourcedir=debian/log2mail
 	install -m 0644 debian/log2mail.conf \
-		`pwd`/debian/log2mail/etc/log2mail/config/default
+		$(DESTDIR)/etc/log2mail/config/default
 	# email template
 	install -m 0644 debian/log2mail.email \
-		`pwd`/debian/log2mail/etc/log2mail/mail
+		$(DESTDIR)/etc/log2mail/mail

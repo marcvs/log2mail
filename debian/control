@@ -3,7 +3,7 @@ Section: admin
 Priority: optional
 Maintainer: Qingning Huo <qhuo@mayhq.co.uk>
 Standards-Version: 3.6.2
-Build-Depends: debhelper (>= 4.1), cdbs, dh-buildinfo
+Build-Depends: debhelper (>= 11), cdbs, dh-buildinfo
 
 Package: log2mail
 Architecture: any
